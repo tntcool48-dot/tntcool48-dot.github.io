@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Yazan Jaber</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/typography.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/environment.css">
+    <style>
+                .animated-logo { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: #c0c0c0; text-transform: uppercase; letter-spacing: -0.02em; transition: color 0.2s ease; }
+        .animated-logo:hover { color: #ccc; } 
+        .premium-nav { position: fixed; top: 0; left: 0; right: 0; padding: var(--space-4) var(--space-8); display: flex; justify-content: space-between; align-items: center; background: rgba(5, 5, 7, 0.4); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border-light); z-index: 100; }
+        .nav-links { display: flex; gap: var(--space-6); }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-6);
+        }
+        
+        .skill-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: var(--space-6);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .skill-card h3 {
+            color: #7851A9;
+            margin-bottom: var(--space-4);
+            font-size: var(--text-lg);
+        }
+        
+        .skill-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: var(--clr-text-secondary);
+        }
+        
+        .skill-card li {
+            margin-bottom: var(--space-2);
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-card li::before {
+            content: "•";
+            color: #4a4ad4;
+            margin-right: var(--space-2);
+        }
+    </style>
+</head>
+<body class="theme-red">
+    <canvas id="neural-canvas" style="position:fixed; inset:0; z-index:0; pointer-events:none;"></canvas>
+
+    <nav class="premium-nav">
+        <a href="index.html" class="animated-logo">YAZAN JABER</a>
+        <div class="nav-links font-mono text-sm" style="align-items: center;">
+            <a href="about.html"><img src="https://github.com/tntcool48-dot.png" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%; opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8"></a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html" style="color:#c0c0c0; font-weight:bold;">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="grid-container" style="padding-top: 120px; padding-bottom: 80px;">
+        <div style="grid-column: 1/-1; margin-bottom: var(--space-8); text-align: center;">
+            <h1 class="display-2 text-gradient">About Me</h1>
+            <p class="text-secondary text-lg" style="max-width: 800px; margin: 0 auto; margin-top: 1rem;">I am a software developer and game development student focused on building performant desktop applications, decentralized networking tools, and game systems. I prioritize system independence and privacy, preferring to build custom solutions from the ground up—whether that means developing hardware monitoring suites, personal media aggregators, or running fully local AI inference environments.</p>
+        </div>
+
+        <section style="grid-column: 1/-1;">
+            <div class="skills-grid">
+                
+                <div class="skill-card glass-panel">
+                    <h3>Languages & Frameworks</h3>
+                    <ul>
+                        <li>C# & .NET 8</li>
+                        <li>Python</li>
+                        <li>Windows Presentation Foundation (WPF)</li>
+                        <li>Unity Game Engine</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card glass-panel">
+                    <h3>Artificial Intelligence</h3>
+                    <ul>
+                        <li>Local LLM Inference & Optimization</li>
+                        <li>Local AI Deployment</li>
+                        <li>Text-to-Speech (TTS) Systems</li>
+                        <li>Audio Separation Tools</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card glass-panel">
+                    <h3>Software Engineering</h3>
+                    <ul>
+                        <li>Native Desktop Applications</li>
+                        <li>UI/UX Architecture</li>
+                        <li>2D/3D Game Mechanics</li>
+                        <li>Custom Engine Architectures</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card glass-panel">
+                    <h3>Systems & Networking</h3>
+                    <ul>
+                        <li>Decentralized Server Hosting</li>
+                        <li>CGNAT Bypass Solutions</li>
+                        <li>Custom Windows Diagnostics</li>
+                        <li>Hardware Interrogation (WMI)</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+    
+        <section class="glass-panel" style="grid-column: 1/-1; margin-top: var(--space-8); padding: var(--space-6);">
+            <h2 class="h3" style="color: #7851A9; margin-bottom: var(--space-4);">Technology Stack Matrix</h2>
+            <table style="width: 100%; border-collapse: collapse; color: var(--clr-text-secondary); font-family: var(--font-mono); font-size: var(--text-sm);">
+                <thead>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); color: #fff; text-align: left;">
+                        <th style="padding: var(--space-2);">Category</th>
+                        <th style="padding: var(--space-2);">Primary</th>
+                        <th style="padding: var(--space-2);">Secondary</th>
+                        <th style="padding: var(--space-2);">Environment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: var(--space-2); color: #4a4ad4;">Backend/Systems</td>
+                        <td style="padding: var(--space-2);">C# .NET 8</td>
+                        <td style="padding: var(--space-2);">Python</td>
+                        <td style="padding: var(--space-2);">Windows/Linux</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: var(--space-2); color: #4a4ad4;">Desktop UI</td>
+                        <td style="padding: var(--space-2);">WPF</td>
+                        <td style="padding: var(--space-2);">CustomTkinter</td>
+                        <td style="padding: var(--space-2);">Native Windows</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: var(--space-2); color: #4a4ad4;">Game Engine</td>
+                        <td style="padding: var(--space-2);">Unity 3D</td>
+                        <td style="padding: var(--space-2);">C# Scripts</td>
+                        <td style="padding: var(--space-2);">Cross-Platform</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <script type="module">
+        import { PhysicsEngine } from './js/PhysicsEngine.js';
+        const physics = new PhysicsEngine('#neural-canvas');
+        physics.start();
+    </script>
+</body>
+</html>

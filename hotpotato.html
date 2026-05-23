@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Potato Launcher | Yazan Jaber</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/typography.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/environment.css">
+    <style>
+                .animated-logo { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: #c0c0c0; text-transform: uppercase; letter-spacing: -0.02em; transition: color 0.2s ease; }
+        .animated-logo:hover { color: #ccc; } 
+        .premium-nav { position: fixed; top: 0; left: 0; right: 0; padding: var(--space-4) var(--space-8); display: flex; justify-content: space-between; align-items: center; background: rgba(5, 5, 7, 0.4); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border-light); z-index: 100; }
+        .nav-links { display: flex; gap: var(--space-6); }
+        .hero-img { width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+</style>
+</head>
+<body class="theme-red">
+    <canvas id="neural-canvas" style="position:fixed; inset:0; z-index:0; pointer-events:none;"></canvas>
+
+    <nav class="premium-nav">
+        <a href="index.html" class="animated-logo">YAZAN JABER</a>
+        <div class="nav-links font-mono text-sm" style="align-items: center;">
+            <a href="about.html"><img src="https://github.com/tntcool48-dot.png" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%; opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8"></a>
+            <a href="projects.html" style="color:#c0c0c0; font-weight:bold;">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="grid-container" style="padding-top: 120px;">
+        <div style="grid-column: 1/-1; margin-bottom: var(--space-4);">
+            <a href="projects.html" class="text-secondary font-mono"><< Return to Projects</a>
+        </div>
+        
+        <div style="grid-column: 1/-1; text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 800px; margin: 0 auto; animation: fadeUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+            <h1 class="display-2 text-gradient">Hot Potato Launcher</h1>
+            <div class="badge mt-2" style="background: rgba(120, 81, 169, 0.15); color: #b38ce6; border-color: rgba(120, 81, 169, 0.5);">C#</div><div class="badge mt-2" style="margin-left: 0.5rem; background: rgba(255,255,255,0.05); color: #ccc; border-color: rgba(255,255,255,0.2);">GUI</div>
+            <p class="text-secondary text-lg mb-6">A decentralized Minecraft server launcher that enables seamless, peer-to-peer hosting within a friend group. It ensures high availability by allowing any authenticated user to seamlessly host the server instance when it is not currently active.</p>
+            
+            <h3 class="h4 mt-6">Features</h3>
+            <ul style="list-style:none; padding:0; margin-bottom:var(--space-6); color:var(--clr-text-secondary); width:100%;">
+                <li style="margin-bottom: 0.5rem; background: rgba(255,255,255,0.02); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); text-align: center; width: 100%;">Native C# Application</li>
+                <li style="margin-bottom: 0.5rem; background: rgba(255,255,255,0.02); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); text-align: center; width: 100%;">Lightweight Execution Profile</li>
+                <li style="margin-bottom: 0.5rem; background: rgba(255,255,255,0.02); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); text-align: center; width: 100%;">Fast desktop interface</li>
+            </ul>
+
+            <!-- Download Button -->
+            <div style="display:flex; gap:1rem; justify-content:center; width:100%; flex-wrap:wrap;">
+            <div style="display:flex; gap:1rem; justify-content:center; width:100%; flex-wrap:wrap;">
+            <a href="https://github.com/tntcool48-dot/hotpotatolauncher/archive/refs/heads/master.zip" target="_blank" class="btn btn-primary" download>
+                Download Source (.zip)
+            </a>
+            <a href="https://github.com/tntcool48-dot/hotpotatolauncher" target="_blank" class="btn btn-glass ml-2">
+                View on GitHub
+            </a>
+            </div>
+        </div>
+
+        </main>
+
+    <script type="module">
+        import { PhysicsEngine } from './js/PhysicsEngine.js';
+        const physics = new PhysicsEngine('#neural-canvas');
+        physics.start();
+    </script>
+</body>
+</html>

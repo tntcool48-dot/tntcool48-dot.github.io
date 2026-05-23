@@ -1,0 +1,143 @@
+/**
+ * REBAJ CORE - LAYOUT
+ * 
+ * Structural layout definitions using CSS Grid, Subgrid, and Container Queries.
+ * Provides the macro-structure for the OS environment and views.
+ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CONTAINER QUERIES
+   ───────────────────────────────────────────────────────────────────────────── */
+.cq-container {
+    container-type: inline-size;
+    container-name: component;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MACRO LAYOUT (OS SHELL)
+   ───────────────────────────────────────────────────────────────────────────── */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.main-viewport {
+    flex: 1;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 1000px; /* 3D layer context */
+    z-index: var(--z-base);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CSS GRID SYSTEMS
+   ───────────────────────────────────────────────────────────────────────────── */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-6);
+    width: 100%;
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+    padding: 0 var(--layout-padding-x);
+}
+
+/* Desktop Icon Grid (OS Shell) */
+.desktop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--os-desktop-grid), 1fr));
+    grid-auto-rows: calc(var(--os-desktop-grid) * 1.2);
+    gap: var(--space-4);
+    padding: var(--space-6);
+    height: 100%;
+    align-content: start;
+}
+
+/* Bento Grid System */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: var(--space-8);
+    grid-auto-rows: min-content;
+    min-height: 250px;
+    grid-auto-flow: dense;
+}
+
+/* Subgrid definition (Requires parent to be a grid item) */
+.subgrid {
+    display: grid;
+    grid-template-columns: subgrid;
+    gap: var(--space-4);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   FLEX LAYOUTS
+   ───────────────────────────────────────────────────────────────────────────── */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end { justify-content: flex-end; }
+
+.gap-2 { gap: var(--space-2); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   STRUCTURAL UTILITIES
+   ───────────────────────────────────────────────────────────────────────────── */
+.section-padding {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.full-bleed {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+/* Container query examples for bento tiles */
+@container component (min-width: 600px) {
+    .bento-tile.wide {
+        grid-column: span 2;
+    }
+}
+
+@container component (min-width: 900px) {
+    .bento-tile.tall {
+        grid-row: span 2;
+    }
+    .bento-tile.large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}

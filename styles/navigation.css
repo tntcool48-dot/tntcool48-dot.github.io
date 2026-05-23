@@ -1,0 +1,202 @@
+/**
+ * REBAJ CORE - NAVIGATION
+ * 
+ * Taskbar, Header, and Footer styles.
+ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   OS TASKBAR
+   ───────────────────────────────────────────────────────────────────────────── */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--os-taskbar-height);
+    background: var(--glass-heavy);
+    backdrop-filter: blur(var(--blur-xl));
+    -webkit-backdrop-filter: blur(var(--blur-xl));
+    border-top: 1px solid var(--glass-border-medium);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-4);
+    z-index: var(--z-header);
+    user-select: none;
+}
+
+.taskbar-start, .taskbar-center, .taskbar-end {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+/* Start Button */
+.taskbar-start-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    color: var(--clr-text-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    transition: background var(--duration-fast) var(--ease-out);
+}
+
+.taskbar-start-btn:hover, .taskbar-start-btn.is-active {
+    background: var(--glass-light);
+    border-color: var(--glass-border-light);
+}
+
+.taskbar-start-btn svg {
+    color: var(--theme-accent);
+    filter: drop-shadow(0 0 5px var(--theme-accent-glow));
+}
+
+/* Taskbar Apps (Center) */
+.taskbar-app {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--clr-text-secondary);
+    position: relative;
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.taskbar-app:hover {
+    background: var(--glass-light);
+    color: var(--clr-text-primary);
+}
+
+/* Active indicator dot */
+.taskbar-app.is-running::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--theme-accent);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
+.taskbar-app.is-focused {
+    background: var(--glass-medium);
+    border-color: var(--glass-border-medium);
+    color: var(--theme-accent);
+}
+
+.taskbar-app.is-focused::after {
+    width: 12px;
+    border-radius: 2px;
+}
+
+/* System Tray (End) */
+.taskbar-tray-item {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--clr-text-secondary);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+}
+
+.taskbar-tray-item:hover {
+    background: var(--glass-light);
+    color: var(--clr-text-primary);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   START MENU (DROPDOWN)
+   ───────────────────────────────────────────────────────────────────────────── */
+.start-menu {
+    position: absolute;
+    bottom: calc(var(--os-taskbar-height) + var(--space-4));
+    left: var(--space-4);
+    width: 320px;
+    height: 480px;
+    background: var(--glass-heavy);
+    backdrop-filter: blur(var(--blur-xl));
+    -webkit-backdrop-filter: blur(var(--blur-xl));
+    border: 1px solid var(--glass-border-medium);
+    border-top-color: var(--glass-border-hover);
+    border-left-color: var(--glass-border-hover);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    transform-origin: bottom left;
+    transition: opacity var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+
+.start-menu.is-hidden {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+    pointer-events: none;
+}
+
+.start-menu-search {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--glass-border-light);
+}
+
+.start-menu-search input {
+    width: 100%;
+    background: var(--glass-medium);
+    border: 1px solid var(--glass-border-medium);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-4);
+    color: var(--clr-text-primary);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+}
+
+.start-menu-search input:focus {
+    border-color: var(--theme-accent);
+    box-shadow: 0 0 0 1px var(--theme-accent-dim);
+}
+
+.start-menu-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-2);
+}
+
+.start-menu-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    color: var(--clr-text-secondary);
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.start-menu-item:hover, .start-menu-item:focus-visible {
+    background: var(--theme-accent-dim);
+    color: var(--theme-accent);
+}
+
+.start-menu-item svg {
+    width: 24px;
+    height: 24px;
+}
+
+.start-menu-footer {
+    padding: var(--space-4);
+    border-top: 1px solid var(--glass-border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Yazan Jaber</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/typography.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/environment.css">
+    <style>
+                .animated-logo { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: #c0c0c0; text-transform: uppercase; letter-spacing: -0.02em; transition: color 0.2s ease; }
+        .animated-logo:hover { color: #ccc; } 
+        .premium-nav { position: fixed; top: 0; left: 0; right: 0; padding: var(--space-4) var(--space-8); display: flex; justify-content: space-between; align-items: center; background: rgba(5, 5, 7, 0.4); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border-light); z-index: 100; }
+        .nav-links { display: flex; gap: var(--space-6); }
+        
+        .repo-card { display: flex; flex-direction: column; height: 100%; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; border: 1px solid rgba(255,255,255,0.05); }
+        .repo-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px var(--theme-accent-dim); border-color: var(--theme-accent-glow); z-index: 10; }
+        .repo-content { flex-grow: 1; }
+        .download-row { display: flex; gap: 0.5rem; margin-top: 1rem; }
+        .download-btn { flex: 1; text-align: center; font-size: 0.8rem; padding: 0.4rem; border-radius: 4px; background: rgba(192,192,192,0.05); color: #c0c0c0; text-decoration: none; border: 1px solid rgba(192,192,192,0.2); transition: all 0.2s; }
+        .download-btn:hover { background: rgba(120, 81, 169, 0.2); color: #c0c0c0; border-color: rgba(120, 81, 169, 0.5); }
+        
+        .section-header { grid-column: 1/-1; margin-top: var(--space-8); margin-bottom: var(--space-4); border-bottom: 1px solid var(--glass-border-medium); padding-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="theme-red">
+    <canvas id="neural-canvas" style="position:fixed; inset:0; z-index:0; pointer-events:none;"></canvas>
+
+    <nav class="premium-nav">
+        <a href="index.html" class="animated-logo">YAZAN JABER</a>
+        <div class="nav-links font-mono text-sm" style="align-items: center;">
+            <a href="about.html"><img src="https://github.com/tntcool48-dot.png" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%; opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8"></a>
+            <a href="projects.html" style="color:#c0c0c0; font-weight:bold;">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="grid-container" style="padding-top: 120px; padding-bottom: 80px;">
+        <div style="grid-column: 1/-1; margin-bottom: var(--space-8);">
+            <h1 class="display-1 text-gradient">Software Ecosystem</h1>
+            <p class="text-secondary text-lg">My open-source ecosystem. Access all applications below.</p>
+        </div>
+
+        <!-- ================= WORK ECOSYSTEM ================= -->
+        <h2 class="h3 section-header text-gradient">Work & Utility Ecosystem</h2>
+        <div class="bento-grid" style="grid-column: 1/-1;">
+            
+            <!-- DubDetect -->
+            <div class="card glass-panel repo-card">
+                <a href="dubdetect.html" style="display:block;"></a>
+                <div class="repo-content">
+                    <h3 class="h4"><a href="dubdetect.html">DubDetect</a></h3>
+                    <p class="text-sm text-secondary">Cross-reference voice actors from anime against your MyAnimeList library.</p>
+                    <div class="badge mt-2" style="background: rgba(120, 81, 169, 0.15); color: #b38ce6; border-color: rgba(120, 81, 169, 0.5);">Python</div><div class="badge mt-2" style="margin-left: 0.5rem; background: rgba(255,255,255,0.05); color: #ccc; border-color: rgba(255,255,255,0.2);">GUI</div>
+                </div>
+                <div class="download-row">
+                    <a href="https://github.com/tntcool48-dot/DubDetect/archive/refs/heads/main.zip" class="download-btn" download>Download .zip</a>
+                    <a href="https://github.com/tntcool48-dot/DubDetect" target="_blank" class="download-btn">Source</a>
+                </div>
+            </div>
+
+            <!-- EntropyEngine -->
+            <div class="card glass-panel repo-card">
+                <a href="entropy.html" style="display:block;"></a>
+                <div class="repo-content">
+                    <h3 class="h4"><a href="entropy.html">EntropyEngine</a></h3>
+                    <p class="text-sm text-secondary mt-1">A comprehensive randomness generation suite featuring a dedicated front-end interface, designed to provide system-wide stochastic utility for various computational needs.</p>
+                    <div class="badge mt-2" style="background: rgba(120, 81, 169, 0.15); color: #b38ce6; border-color: rgba(120, 81, 169, 0.5);">C# / Python</div><div class="badge mt-2" style="margin-left: 0.5rem; background: rgba(255,255,255,0.05); color: #ccc; border-color: rgba(255,255,255,0.2);">GUI</div>
+                </div>
+                <div class="download-row">
+                    <a href="https://github.com/tntcool48-dot/EntropyEngine/archive/refs/heads/main.zip" class="download-btn" download>Download .zip</a>
+                    <a href="https://github.com/tntcool48-dot/EntropyEngine" target="_blank" class="download-btn">Source</a>
+                </div>
+            </div>
+
+            <!-- Computer-Diagnostic-Tool -->
+            <div class="card glass-panel repo-card">
+                <a href="diagnostic.html" style="display:block;"></a>
+                <div class="repo-content">
+                    <h3 class="h4"><a href="diagnostic.html">Diagnostic Tool</a></h3>
+                    <p class="text-sm text-secondary mt-1">WMI hardware diagnostic and stress-testing suite for IT professionals.</p>
+                    <div class="badge mt-2" style="background: rgba(120, 81, 169, 0.15); color: #b38ce6; border-color: rgba(120, 81, 169, 0.5);">Python</div><div class="badge mt-2" style="margin-left: 0.5rem; background: rgba(255,255,255,0.05); color: #ccc; border-color: rgba(255,255,255,0.2);">CLI</div>
+                </div>
+                <div class="download-row">
+                    <a href="https://github.com/tntcool48-dot/Computer-Diagnostic-Tool/archive/refs/heads/main.zip" class="download-btn" download>Download .zip</a>
+                    <a href="https://github.com/tntcool48-dot/Computer-Diagnostic-Tool" target="_blank" class="download-btn">Source</a>
+                </div>
+            </div>
+
+            <!-- Online-Cheese -->
+            <div class="card glass-panel repo-card">
+                <a href="cheese.html" style="display:block;"></a>
+                <div class="repo-content">
+                    <h3 class="h4"><a href="cheese.html">Online-Cheese</a></h3>
+                    <p class="text-sm text-secondary mt-1">Headless automation daemon to automatically join Microsoft Teams lectures.</p>
+                    <div class="badge mt-2" style="background: rgba(120, 81, 169, 0.15); color: #b38ce6; border-color: rgba(120, 81, 169, 0.5);">Python</div><div class="badge mt-2" style="margin-left: 0.5rem; background: rgba(255,255,255,0.05); color: #ccc; border-color: rgba(255,255,255,0.2);">CLI</div>
+                </div>
+                <div class="download-row">
+                    <a href="https://github.com/tntcool48-dot/Online-Cheese/archive/refs/heads/main.zip" class="download-btn" download>Download .zip</a>
+                    <a href="https://github.com/tntcool48-dot/Online-Cheese" target="_blank" class="download-btn">Source</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================= GAMING ECOSYSTEM ================= -->
+        <h2 class="h3 section-header text-gradient" style="margin-top: var(--space-12);">Gaming Ecosystem</h2>
+        <div class="bento-grid" style="grid-column: 1/-1;">
+
+            <!-- Guardian-Bot -->
+            <div class="card glass-panel repo-card">
+                <a href="guardian.html" style="display:block;"></a>
+                <div class="repo-content">
+                    <h3 class="h4"><a href="guardian.html">Guardian-Bot</a></h3>
+                    <p class="text-sm text-secondary">A highly advanced skyblock macro utilizing pixel-perfect timing and logic.</p>
+                    <div class="badge mt-2" style="background: rgba(120, 81, 169, 0.15); color: #b38ce6; border-color: rgba(120, 81, 169, 0.5);">Python</div><div class="badge mt-2" style="margin-left: 0.5rem; background: rgba(255,255,255,0.05); color: #ccc; border-color: rgba(255,255,255,0.2);">GUI</div>
+                </div>
+                <div class="download-row">
+                    <a href="https://github.com/tntcool48-dot/Guardian-Bot/archive/refs/heads/main.zip" class="download-btn" download>Download .zip</a>
+                    <a href="https://github.com/tntcool48-dot/Guardian-Bot" target="_blank" class="download-btn">Source</a>
+                </div>
+            </div>
+
+            <!-- Hot Potato Launcher -->
+            <div class="card glass-panel repo-card">
+                <a href="hotpotato.html" style="display:block;"></a>
+                <div class="repo-content">
+                    <h3 class="h4"><a href="hotpotato.html">Hot Potato Launcher</a></h3>
+                    <p class="text-sm text-secondary">A decentralized Minecraft server launcher that enables seamless, peer-to-peer hosting within a friend group. It ensures high availability by allowing any authenticated user to seamlessly host the server instance when it is not currently active.</p>
+                    <div class="badge mt-2" style="background: rgba(120, 81, 169, 0.15); color: #b38ce6; border-color: rgba(120, 81, 169, 0.5);">C#</div><div class="badge mt-2" style="margin-left: 0.5rem; background: rgba(255,255,255,0.05); color: #ccc; border-color: rgba(255,255,255,0.2);">GUI</div>
+                </div>
+                <div class="download-row">
+                    <a href="https://github.com/tntcool48-dot/hotpotatolauncher/archive/refs/heads/master.zip" class="download-btn" download>Download .zip</a>
+                    <a href="https://github.com/tntcool48-dot/hotpotatolauncher" target="_blank" class="download-btn">Source</a>
+                </div>
+            </div>
+
+            <!-- calibration -->
+            <div class="card glass-panel repo-card">
+                <a href="calibration.html" style="display:block;"></a>
+                <div class="repo-content">
+                    <h3 class="h4"><a href="calibration.html">Calibration</a></h3>
+                    <p class="text-sm text-secondary mt-1">A precision-focused aim training application engineered in Unity, designed to help users calibrate and improve their mouse tracking and reflex mechanics.</p>
+                    <div class="badge mt-2" style="background: rgba(120, 81, 169, 0.15); color: #b38ce6; border-color: rgba(120, 81, 169, 0.5);">Unity / C#</div><div class="badge mt-2" style="margin-left: 0.5rem; background: rgba(255,255,255,0.05); color: #ccc; border-color: rgba(255,255,255,0.2);">Game</div>
+                </div>
+                <div class="download-row">
+                    <a href="https://github.com/tntcool48-dot/calibration/archive/refs/heads/main.zip" class="download-btn" download>Download .zip</a>
+                    <a href="https://github.com/tntcool48-dot/calibration" target="_blank" class="download-btn">Source</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script type="module">
+        import { PhysicsEngine } from './js/PhysicsEngine.js';
+        const physics = new PhysicsEngine('#neural-canvas');
+        physics.start();
+    </script>
+</body>
+</html>

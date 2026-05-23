@@ -1,0 +1,146 @@
+/**
+ * REBAJ CORE - VARIABLES
+ * 
+ * Comprehensive CSS Custom Properties mapping to the JS DESIGN_TOKENS.
+ * Includes colors, glassmorphism, typography, layout, animations, and OS tokens.
+ */
+
+ :root {
+    /* Base Palette */
+    --clr-bg: hsl(0, 0%, 0%);
+    --clr-surface: hsl(0, 0%, 4%);
+    --clr-surface-elevated: hsl(0, 0%, 8%);
+    --clr-surface-border: hsla(0, 0%, 15%, 0.5);
+
+    /* Text */
+    --clr-text-primary: #c0c0c0;
+    --clr-text-secondary: #8a8f98;
+    --clr-text-tertiary: #555962;
+    --clr-text-inverse: #050507;
+
+    /* Accents (HSL Base) */
+    --hue-cyan: 184;
+    --hue-violet: 275;
+    --hue-emerald: 157;
+    --hue-rose: 340;
+    --hue-red: 355;
+    --accent-red: hsl(var(--hue-red), 90%, 60%);
+    --accent-red-dim: hsla(var(--hue-red), 90%, 60%, 0.15);
+    --accent-red-glow: hsla(var(--hue-red), 90%, 60%, 0.4);
+
+    /* Semantic Accents */
+    --accent-cyan: hsl(var(--hue-cyan), 100%, 50%);
+    --accent-violet: hsl(var(--hue-violet), 65%, 58%);
+    --accent-emerald: hsl(var(--hue-emerald), 100%, 50%);
+    --accent-rose: hsl(var(--hue-rose), 100%, 50%);
+
+    /* Contextual Accents (Dim/Glow) */
+    --accent-cyan-dim: hsla(var(--hue-cyan), 100%, 50%, 0.15);
+    --accent-cyan-glow: hsla(var(--hue-cyan), 100%, 50%, 0.4);
+    --accent-violet-dim: hsla(var(--hue-violet), 65%, 58%, 0.15);
+    --accent-emerald-dim: hsla(var(--hue-emerald), 100%, 50%, 0.15);
+    --accent-rose-dim: hsla(var(--hue-rose), 100%, 50%, 0.15);
+
+    /* Glassmorphism System */
+    --glass-light: rgba(192, 192, 192, 0.03);
+    --glass-medium: rgba(20, 20, 25, 0.4);
+    --glass-heavy: rgba(10, 10, 14, 0.75);
+    --glass-hover: rgba(30, 30, 40, 0.6);
+    --glass-border-light: rgba(192, 192, 192, 0.05);
+    --glass-border-medium: rgba(192, 192, 192, 0.1);
+    --glass-border-hover: rgba(192, 192, 192, 0.2);
+    --blur-sm: 8px;
+    --blur-md: 16px;
+    --blur-lg: 24px;
+    --blur-xl: 32px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--glass-border-light);
+    --shadow-glow-cyan: 0 0 20px var(--accent-cyan-glow);
+
+    /* Typography System */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-display: 'Space Grotesk', 'Inter', sans-serif;
+    --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    /* Fluid Type Scale */
+    --text-xs: clamp(0.75rem, 0.7vw + 0.5rem, 0.85rem);
+    --text-sm: clamp(0.875rem, 0.8vw + 0.5rem, 0.95rem);
+    --text-base: clamp(1rem, 1vw + 0.5rem, 1.125rem);
+    --text-lg: clamp(1.125rem, 1.2vw + 0.5rem, 1.25rem);
+    --text-xl: clamp(1.25rem, 1.5vw + 0.5rem, 1.5rem);
+    --text-2xl: clamp(1.5rem, 2vw + 0.5rem, 2rem);
+    --text-3xl: clamp(2rem, 3vw + 0.5rem, 2.5rem);
+    --text-4xl: clamp(2.5rem, 4vw + 0.5rem, 3.5rem);
+    --text-5xl: clamp(3rem, 6vw + 0.5rem, 5rem);
+    --text-mega: clamp(3.5rem, 8vw + 0.5rem, 7rem);
+
+    /* Spacing Scale */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+    --radius-full: 9999px;
+
+    /* Layout Constraints */
+    --layout-max-width: 1600px;
+    --layout-padding-x: clamp(1.5rem, 5vw, 4rem);
+
+    /* Easing & Animation */
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    --duration-ultra-slow: 800ms;
+
+    /* Z-Index Layers */
+    --z-negative: -1;
+    --z-canvas: 0;
+    --z-base: 10;
+    --z-elevated: 20;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-header: 1000;
+    --z-modal: 2000;
+
+    /* OS specific variables */
+    --os-taskbar-height: 48px;
+    --os-window-chrome: 36px;
+    --os-terminal-height: 400px;
+    --os-desktop-grid: 80px;
+
+    /* Theme Active Assignment */
+    --theme-accent: #c0c0c0;
+    --theme-accent-dim: rgba(192, 192, 192, 0.15);
+    --theme-accent-glow: rgba(192, 192, 192, 0.3);
+}
+
+/* Light Mode / High Contrast overrides can go here */
+@media (prefers-contrast: more) {
+    :root {
+        --clr-text-secondary: #ffffff;
+        --glass-border-medium: rgba(192, 192, 192, 0.5);
+    }
+}
