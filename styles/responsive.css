@@ -20,12 +20,6 @@
     .bento-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-
-    .os-window {
-        /* Snap windows tighter on smaller screens */
-        max-width: calc(100vw - var(--space-8)) !important;
-        max-height: calc(100vh - var(--os-taskbar-height) - var(--space-8)) !important;
-    }
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -35,8 +29,6 @@
     :root {
         --layout-padding-x: var(--space-4);
         --text-mega: clamp(2.5rem, 8vw, 4rem);
-        --os-desktop-grid: 64px;
-        --os-taskbar-height: 56px; /* Slightly taller for touch targets */
     }
 
     .grid-container {
@@ -48,87 +40,17 @@
         grid-template-columns: 1fr; /* Stack bento boxes */
         grid-auto-rows: minmax(200px, auto);
     }
-
-    /* Force bento tiles to single column on mobile */
-    .bento-tile.wide, .bento-tile.large {
-        grid-column: 1 / -1 !important;
-    }
-
-    .taskbar {
-        padding: 0 var(--space-2);
-    }
-
-    .taskbar-start-btn span {
-        display: none; /* Hide 'REBAJ' text, show only icon on mobile */
-    }
-
-    .taskbar-tray-item.clock {
-        display: none; /* Hide clock to save space */
-    }
-
-    .start-menu {
-        width: calc(100vw - var(--space-4));
-        left: var(--space-2);
-        bottom: calc(var(--os-taskbar-height) + var(--space-2));
-    }
-
-    /* Fullscreen OS Windows on mobile */
-    .os-window.mobile-fullscreen {
-        top: 0 !important;
-        left: 0 !important;
-        width: 100vw !important;
-        height: calc(100vh - var(--os-taskbar-height)) !important;
-        border-radius: 0;
-        border: none;
-        transform: none !important;
-    }
-
-    .os-window.mobile-fullscreen .os-window-chrome {
-        border-radius: 0;
-    }
-}
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   SMALL MOBILE BReaKPOINT (max-width: 480px)
-   ───────────────────────────────────────────────────────────────────────────── */
-@media (max-width: 480px) {
-    .taskbar-app {
-        width: 44px; /* Touch target size */
-        height: 44px;
-    }
-
-    .display-mega {
-        word-break: break-word;
-        hyphens: auto;
-    }
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
    ACCESSIBILITY: PREFERS REDUCED MOTION
    ───────────────────────────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-    .aurora-orb {
-        animation: none !important;
-        opacity: 0.2; /* Static dim glow */
-    }
-
-    .page-enter, .page-exit,
-    .window-open, .window-close {
-        animation: none !important;
-        transition: opacity 0.1s ease !important;
-    }
-
-    .page-enter { opacity: 1; transform: none; filter: none; }
-    .page-exit { opacity: 0; }
-    
-    .window-open { opacity: 1; transform: none; filter: none; }
-    .window-close { opacity: 0; }
-
     #neural-canvas {
         display: none; /* Disable particle physics completely */
     }
 
-    .btn, .card, .os-icon {
+    .btn, .card {
         transition-duration: 0.01ms !important;
         transform: none !important;
     }
@@ -148,7 +70,7 @@
         --clr-text-tertiary: #cccccc;
     }
 
-    .glass-panel, .glass-panel-heavy, .os-window, .taskbar, .start-menu {
+    .glass-panel, .glass-panel-heavy {
         backdrop-filter: none;
         background: #000000;
         border: 2px solid #ffffff;
@@ -162,9 +84,5 @@
 
     .btn-glass {
         border: 2px solid #ffffff;
-    }
-
-    .aurora-system {
-        display: none;
     }
 }
