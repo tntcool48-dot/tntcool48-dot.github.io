@@ -18,29 +18,6 @@
     --clr-text-tertiary: #555962;
     --clr-text-inverse: #050507;
 
-    /* Accents (HSL Base) */
-    --hue-cyan: 184;
-    --hue-violet: 275;
-    --hue-emerald: 157;
-    --hue-rose: 340;
-    --hue-red: 355;
-    --accent-red: hsl(var(--hue-red), 90%, 60%);
-    --accent-red-dim: hsla(var(--hue-red), 90%, 60%, 0.15);
-    --accent-red-glow: hsla(var(--hue-red), 90%, 60%, 0.4);
-
-    /* Semantic Accents */
-    --accent-cyan: hsl(var(--hue-cyan), 100%, 50%);
-    --accent-violet: hsl(var(--hue-violet), 65%, 58%);
-    --accent-emerald: hsl(var(--hue-emerald), 100%, 50%);
-    --accent-rose: hsl(var(--hue-rose), 100%, 50%);
-
-    /* Contextual Accents (Dim/Glow) */
-    --accent-cyan-dim: hsla(var(--hue-cyan), 100%, 50%, 0.15);
-    --accent-cyan-glow: hsla(var(--hue-cyan), 100%, 50%, 0.4);
-    --accent-violet-dim: hsla(var(--hue-violet), 65%, 58%, 0.15);
-    --accent-emerald-dim: hsla(var(--hue-emerald), 100%, 50%, 0.15);
-    --accent-rose-dim: hsla(var(--hue-rose), 100%, 50%, 0.15);
-
     /* Glassmorphism System */
     --glass-light: rgba(192, 192, 192, 0.03);
     --glass-medium: rgba(20, 20, 25, 0.4);
@@ -124,12 +101,6 @@
     --z-sticky: 200;
     --z-header: 1000;
     --z-modal: 2000;
-
-    /* OS specific variables */
-    --os-taskbar-height: 48px;
-    --os-window-chrome: 36px;
-    --os-terminal-height: 400px;
-    --os-desktop-grid: 80px;
 
     /* Theme Active Assignment */
     --theme-accent: #c0c0c0;
